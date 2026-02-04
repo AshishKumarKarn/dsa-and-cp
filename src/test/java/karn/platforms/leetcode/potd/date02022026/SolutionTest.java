@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SolutionTest {
 
     @Test
-    @Disabled
+    @Disabled("Disabled to avoid long test runs during compilation")
     void minimumCostTestOne() throws FileNotFoundException {
         Solution solution = new Solution();
         File file = new File("src/main/resources/date02022026/input1.txt");

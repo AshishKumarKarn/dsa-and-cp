@@ -27,7 +27,7 @@ class SolutionTest {
     }
 
     @Test
-    @Disabled
+    @Disabled("Disabled to avoid long test runs during compilation")
     void largerTestCase1() throws Exception {
         Scanner sc = new Scanner(new File("src/main/resources/leetcode/hard/lc3013/tc1.txt"));
         String line = sc.nextLine();
@@ -47,7 +47,7 @@ class SolutionTest {
     }
 
     @Test
-    @Disabled
+    @Disabled("Disabled to avoid long test runs during compilation")
     void largerTestCase2() throws Exception {
         Scanner sc = new Scanner(new File("src/main/resources/leetcode/hard/lc3013/tc2.txt"));
         String line = sc.nextLine();

@@ -1,4 +1,4 @@
-package karn.platforms.leetcode.potd.leetcode.date02022026;
+package karn.platforms.leetcode.potd.date02022026;
 
 import java.util.TreeMap;
 

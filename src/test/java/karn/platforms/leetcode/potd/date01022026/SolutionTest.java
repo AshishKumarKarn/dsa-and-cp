@@ -1,4 +1,4 @@
-package karn.platforms.leetcode.potd.leetcode.date01022026;
+package karn.platforms.leetcode.potd.date01022026;
 
 import org.junit.jupiter.api.Test;
 

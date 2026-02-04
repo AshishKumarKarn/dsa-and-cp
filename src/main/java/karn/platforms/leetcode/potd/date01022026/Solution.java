@@ -1,4 +1,4 @@
-package karn.platforms.leetcode.potd.leetcode.date01022026;
+package karn.platforms.leetcode.potd.date01022026;
 
 //https://leetcode.com/problems/divide-an-array-into-subarrays-with-minimum-cost-i/?envType=daily-question&envId=2026-02-01
 // leetcode3010

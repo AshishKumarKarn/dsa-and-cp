@@ -1,8 +1,10 @@
-package karn.platforms.leetcode.potd.leetcode.date03022026;
+package karn.platforms.leetcode.potd.date03022026;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 class SolutionTest {
 

@@ -1,4 +1,4 @@
-package karn.platforms.leetcode.potd.leetcode.date03022026;
+package karn.platforms.leetcode.potd.date03022026;
 
 class Solution {
     public boolean isTrionic(int[] nums) {

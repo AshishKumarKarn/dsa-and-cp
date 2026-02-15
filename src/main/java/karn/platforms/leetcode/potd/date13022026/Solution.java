@@ -15,13 +15,13 @@ public class Solution {
 
         for (int i = 0; i < n; i++) {
             if (c[i] == 'a') {
-                cur_a = (i > 0 && c[i-1] == 'a') ? cur_a + 1 : 1;
+                cur_a = (i > 0 && c[i - 1] == 'a') ? cur_a + 1 : 1;
                 max_a = Math.max(max_a, cur_a);
             } else if (c[i] == 'b') {
-                cur_b = (i > 0 && c[i-1] == 'b') ? cur_b + 1 : 1;
+                cur_b = (i > 0 && c[i - 1] == 'b') ? cur_b + 1 : 1;
                 max_b = Math.max(max_b, cur_b);
             } else {
-                cur_c = (i > 0 && c[i-1] == 'c') ? cur_c + 1 : 1;
+                cur_c = (i > 0 && c[i - 1] == 'c') ? cur_c + 1 : 1;
                 max_c = Math.max(max_c, cur_c);
             }
         }

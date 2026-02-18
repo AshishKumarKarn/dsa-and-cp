@@ -1,4 +1,4 @@
-package karn.interviews.testSigma.interviews.ivanti;
+package karn.interviews.ivanti;
 
 public class Solution {
     static void main() throws InterruptedException {

@@ -2,20 +2,14 @@ package karn.platforms.leetcode.potd.date18022026;
 
 public class Solution {
     public boolean hasAlternatingBits(int n) {
-        boolean prevBitSet = false;
-        int prevBit = 0;
+        int prevBit = n & 1;
+        n >>= 1;
         while (n > 0) {
-            int currentLastBit = (n & 1);
-            if (!prevBitSet) {
-                prevBitSet = true;
-                prevBit = currentLastBit;
-                n >>= 1;
-                continue;
-            }
-            if ((currentLastBit ^ prevBit) == 0) {
+            int lsb = n & 1;
+            if ((prevBit ^ lsb) == 0) {
                 return false;
             }
-            prevBit = currentLastBit;
+            prevBit = lsb;
             n >>= 1;
         }
         return true;

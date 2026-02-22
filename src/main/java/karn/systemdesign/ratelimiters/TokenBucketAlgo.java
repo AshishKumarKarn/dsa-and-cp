@@ -1,5 +1,12 @@
 package karn.systemdesign.ratelimiters;
-
+/**
+ * Token Bucket Algorithm Implementation
+ * This implementation defines a Bucket class that manages the token bucket logic.
+ * The allowRequest method checks if a request can be allowed based on the current number
+ * of tokens and refills the bucket at a specified rate.
+ * The main method simulates incoming requests and demonstrates how the token bucket
+ * algorithm works in practice.
+* */
 public class TokenBucketAlgo {
     static void main() {
         Bucket bucket = new Bucket(10, 5); // Capacity of 10 tokens, refill rate of 5 tokens per second

@@ -1,24 +1,16 @@
 package karn.platforms.leetcode.potd.date25022026;
 
-import karn.platforms.leetcode.potd.common.TreeNode;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 
 class SolutionTest {
 
     @Test
-    void sumRootToLeaf() {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(0);
-        root.left.left = new TreeNode(0);
-        root.left.right = new TreeNode(1);
-        root.right = new TreeNode(1);
-        root.right.left = new TreeNode(0);
-        root.right.right = new TreeNode(1);
-
+    void sortByBits() {
         Solution solution = new Solution();
-        assertEquals(22, solution.sumRootToLeaf(root));
+        int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        assertArrayEquals(new int[]{0, 1, 2, 4, 8, 3, 5, 6, 7}, solution.sortByBits(arr));
     }
 }

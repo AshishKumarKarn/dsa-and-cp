@@ -1,6 +1,7 @@
 package karn.platforms.leetcode.potd.date20260302;
 
 //https://leetcode.com/problems/minimum-swaps-to-arrange-a-binary-grid/?envType=daily-question&envId=2026-03-02
+//lc 1536
 public class Solution {
 
     public int minSwaps(int[][] grid) {

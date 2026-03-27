@@ -2,6 +2,8 @@ package karn.platforms.leetcode.potd.date20260326;
 
 import java.util.Arrays;
 
+//https://leetcode.com/problems/equal-sum-grid-partition-i/
+//lc 3546. Equal Sum Grid Partition I
 public class Solution {
     public boolean canPartitionGrid(int[][] grid) {
         long[] rows =new long[grid.length];

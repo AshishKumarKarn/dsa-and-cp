@@ -5,7 +5,41 @@ import java.util.Arrays;
 //https://leetcode.com/problems/equal-sum-grid-partition-i/
 //lc 3546. Equal Sum Grid Partition I
 public class Solution {
+
     public boolean canPartitionGrid(int[][] grid) {
+
+        long totalSum = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                totalSum += grid[i][j];
+            }
+        }
+        if (totalSum % 2 == 1) {
+            return false;
+        }
+        long sum = 0;
+        for (int i = 0; i < grid.length - 1; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                sum += grid[i][j];
+                if (j == grid[i].length - 1) {
+                    if (sum == totalSum / 2) {
+                        return true;
+                    }
+                }
+            }
+        }
+        sum = 0;
+        for (int j = 0; j < grid[0].length - 1; j++) {
+            for (int i = 0; i < grid.length; i++) {
+                sum += grid[i][j];
+                if (sum == totalSum / 2) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    /*public boolean canPartitionGrid(int[][] grid) {
         long[] rows =new long[grid.length];
         long[] cols = new long[grid[0].length];
         long sum = 0;
@@ -32,5 +66,5 @@ public class Solution {
         }
         return (Arrays.binarySearch(rows, totalSum/2) >= 0) || (Arrays.binarySearch(cols, totalSum/2) >= 0);
 
-    }
+    }*/
 }

@@ -2,6 +2,7 @@ package karn.platforms.leetcode.potd.date20260401;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,11 +17,10 @@ public class Solution {
             Robot robot = new Robot(positions[i], healths[i], directions.charAt(i));
             robots[i] = robot;
         }
-        Arrays.sort(robots, (r1, r2) -> r1.position - r2.position);
+        Arrays.sort(robots, Comparator.comparingInt(robot -> robot.position));
         List<Robot> result = new ArrayList<>();
         Stack<Robot> stack = new Stack<>();
-        for (int i = 0; i < robots.length; i++) {
-            Robot robot = robots[i];
+        for (Robot robot : robots) {
             if (robot.direction == 'L' && stack.isEmpty()) {
                 result.add(robot);
             } else if (robot.direction == 'L') {
@@ -54,16 +54,16 @@ public class Solution {
             map.put(robot.position, robot);
         }
         List<Integer> res = new ArrayList<>();
-        for (int i = 0; i < positions.length; i++) {
-            if (map.containsKey(positions[i])) {
-                res.add(map.get(positions[i]).health);
+        for (int position : positions) {
+            if (map.containsKey(position)) {
+                res.add(map.get(position).health);
             }
         }
         return res;
 
     }
 
-    class Robot {
+    static class Robot {
         int position;
         int health;
         char direction;

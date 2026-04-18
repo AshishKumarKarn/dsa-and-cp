@@ -24,12 +24,21 @@ public class Solution {
 
     //reverse(nums[i])==nums[j]
     //reverse of 120 = 21 but reverse of 21 is 12 not 120
-    private int reverse(int num) {
+    private int reverse(int n) {
+        int num = 0;
+        while (n > 0) {
+            num *= 10;
+            num += (n % 10);
+            n /= 10;
+        }
+        return num;
+    }
+    /*private int reverse(int num) {
         StringBuilder sb = new StringBuilder();
         while (num > 0) {
             sb.append(num % 10);
             num /= 10;
         }
         return Integer.parseInt(sb.toString());
-    }
+    }*/
 }

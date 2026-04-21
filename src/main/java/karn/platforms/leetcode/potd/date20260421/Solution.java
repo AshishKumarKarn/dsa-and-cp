@@ -3,6 +3,7 @@ package karn.platforms.leetcode.potd.date20260421;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
 //https://leetcode.com/problems/minimize-hamming-distance-after-swap-operations/?envType=daily-question&envId=2026-04-21
 //1722. Minimize Hamming Distance After Swap Operations
 public class Solution {
@@ -16,9 +17,9 @@ public class Solution {
             parents[i] = i;
         }
         Map<Integer, Map<Integer, Integer>> map = new HashMap<>();
-        for (int i = 0; i < allowedSwaps.length; i++) {
-            int x = allowedSwaps[i][0];
-            int y = allowedSwaps[i][1];
+        for (int[] allowedSwap : allowedSwaps) {
+            int x = allowedSwap[0];
+            int y = allowedSwap[1];
             union(x, y, parents);
         }
         for (int i = 0; i < source.length; i++) {
@@ -27,8 +28,6 @@ public class Solution {
             freq.put(source[i], freq.getOrDefault(source[i], 0) + 1);
             map.put(p, freq);
         }
-        // System.out.println(map);
-        // System.out.println(Arrays.toString(parents));
         int count = 0;
         for (int i = 0; i < target.length; i++) {
             int p = find(i, parents);
@@ -68,8 +67,8 @@ public class Solution {
         }
         return parent[x] = find(parent[x], parent);
     }
-
+   /*
     public boolean connected(int i, int j, int[] parents) {
         return find(i, parents) == find(j, parents);
-    }
+    }*/
 }

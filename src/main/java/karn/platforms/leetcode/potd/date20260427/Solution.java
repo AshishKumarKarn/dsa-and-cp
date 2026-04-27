@@ -71,7 +71,7 @@ public class Solution {
     }
 
     private void moveDown(int[][] grid, int i, int m, int j, Queue<int[]> position) {
-        if ((i != m - 1 && (grid[i + 1][j] == 2 || (grid[i + 1][j] != 5) || (grid[i + 1][j] != 6)))) {
+        if ((i != m - 1 && (grid[i + 1][j] == 2 || (grid[i + 1][j] == 5) || (grid[i + 1][j] == 6)))) {
             position.add(new int[]{i + 1, j, grid[i + 1][j]});
         }
     }

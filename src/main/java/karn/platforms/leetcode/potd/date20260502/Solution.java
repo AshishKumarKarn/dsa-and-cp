@@ -11,19 +11,19 @@ public class Solution {
             int lastD = i % 10;
             int prevD = i / 10;
             if (lastD == 0 || lastD == 1 || lastD == 8) {
-                if (dp[prevD] == 2) {
-                    count++;
-                }
                 dp[i] = dp[prevD];
             } else if (lastD == 2 || lastD == 5 || lastD == 6 || lastD == 9) {
                 if (dp[prevD] == 1 || dp[prevD] == 2) {
-                    count++;
                     dp[i] = 2;
                 } else {
                     dp[i] = 3;
                 }
             } else {
                 dp[i] = 3;
+            }
+            //if the current number is good number then we will increase the count
+            if (dp[i] == 2) {
+                count++;
             }
         }
         return count;

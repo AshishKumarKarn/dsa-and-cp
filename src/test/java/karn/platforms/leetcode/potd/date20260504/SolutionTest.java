@@ -2,7 +2,7 @@ package karn.platforms.leetcode.potd.date20260504;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class SolutionTest {
 

@@ -2,7 +2,7 @@ package karn.concepts.corejava.dsa;
 
 import java.util.Random;
 
-public class GFG {
+public class SegmentTreeDemo {
 
     private static int testsRun = 0;
     private static int testsFailed = 0;

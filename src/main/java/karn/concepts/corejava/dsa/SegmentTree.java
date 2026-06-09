@@ -3,7 +3,9 @@ package karn.concepts.corejava.dsa;
 /**
  * Segment tree that supports different range operations: SUM, MIN, MAX, PRODUCT.
  * Uses an iterative segment tree with dynamic size (tree array length = 2 * n).
- * Range queries use [l, r) semantics (r exclusive), indices are 0-based.
+ * Range queries use inclusive [l, r] semantics (both endpoints included), indices
+ * are 0-based. A single-index query(i, i) therefore returns arr[i]. If l > r the
+ * range is empty and the operation's identity is returned.
  */
 public class SegmentTree {
     public enum Op { SUM, MIN, MAX, PRODUCT }
@@ -44,12 +46,13 @@ public class SegmentTree {
         for (int i = idx; i > 1; i >>= 1) tree[i >> 1] = combine(tree[i & ~1], tree[i | 1]);
     }
 
-    // range query on [l, r) (0-based, r exclusive)
+    // range query on inclusive [l, r] (0-based, both endpoints included)
     public long query(int l, int r) {
         long resLeft = identity();
         long resRight = identity();
 
-        for (l += n, r += n; l < r; l >>= 1, r >>= 1) {
+        // map inclusive [l, r] to half-open [l, r + 1) for the iterative walk
+        for (l += n, r += n + 1; l < r; l >>= 1, r >>= 1) {
             if ((l & 1) == 1) resLeft = combine(resLeft, tree[l++]);
             if ((r & 1) == 1) resRight = combine(tree[--r], resRight);
         }

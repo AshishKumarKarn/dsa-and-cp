@@ -1,7 +1,9 @@
 package karn.platforms.leetcode.potd.date20260511;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -10,6 +12,9 @@ import java.util.stream.IntStream;
 public class Solution {
 
     public int[] separateDigits(int[] nums) {
+        Deque<Integer> queue = new ArrayDeque<>();
+        queue.peekFirst();
+        queue.addLast(1);
         return Arrays.stream(nums).flatMap(this::process).toArray();
     }
 
